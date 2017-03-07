@@ -1,0 +1,14 @@
+<section>
+    <div class="col-md-10">
+        <form (keydown)="formulario.errors.clear($event.target.name)">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" class="form-control" [ngClass]="{'has-error' : formulario.errors.has('nombre')}" [(ngModel)]="formulario.nombre">
+                <form-help [nombre]="'nombre'" [form]="formulario"></form-help>
+            </div>
+            <div>
+                <button type="button" (click)="enviar()">ENVIAR</button>
+            </div>
+        </form>
+    </div>
+</section>  
